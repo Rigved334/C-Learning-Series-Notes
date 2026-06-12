@@ -1,0 +1,52 @@
+Switch Case
+Video link - https://youtu.be/rfBs5doFfkU?si=lQ6yT43qUWxBvhxU
+
+Notes
+
+1. Switch Case Statements
+A switch case statement is a multi-way branch statement that provides an alternative to long if-else-if chains. It matches an integer or character variable against a list of constant values called cases.
+
+Syntax and Architecture
+C
+switch (choice) {
+    case 'Y':
+        // Block of code for choice 'Y'
+        break;
+    case 'N':
+        // Block of code for choice 'N'
+        break;
+    default:
+        // Fallback block if no cases match
+        break;
+}
+Indentation: When writing cases, code blocks underneath the case label should be indented by 4 spaces (or one tab) for readability.
+
+The default Case: Acts as a safety net. It automatically executes if the variable does not match any of the specified constants.
+
+2. The break Keyword
+The break keyword jumps execution entirely out of the innermost enclosing loop or switch control structure.
+
+In Switch Cases: Failing to include a break causes execution to flow directly into subsequent cases ("fall-through" behavior), even if those case conditions are unmet.
+
+In Loops: Used to force immediate termination of a loop based on an internal condition.
+
+Example: In a loop iterating from 0 to 10:
+
+C
+if (i == 5) {
+    break; 
+}
+When i reaches 5, the loop immediately aborts, printing only numbers 0 through 4.
+
+3. The continue Keyword
+The continue keyword skips the remaining statements in the current iteration of a loop and forces the program control to jump directly to the next iteration check.
+
+Unlike break, it does not terminate the loop entirely.
+
+Example: In a loop iterating from 0 to 10:
+
+C
+if (i == 5) {
+    continue; 
+}
+When i equals 5, the execution line skips the print statement for that turn. The loop resumes normally for 6 through 10. The final console output contains numbers 0–4 and 6–10, explicitly omitting 5.
