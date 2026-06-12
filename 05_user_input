@@ -1,0 +1,36 @@
+User Input 
+Video link - https://youtu.be/8MgkF__WGO0?si=tpjgvMCpzf6oh9iS
+
+Notes
+
+1. Variables and Garbage ValuesIf you declare variables (e.g., int age; float marks; char grade;) without initializing them, they store garbage values left behind in memory by previous programs or the compiler.To prevent unexpected behavior, initialize variables explicitly (e.g., int age = 0;, float marks = 0.0;). Characters do not inherently capture numeric garbage values in the same manner.
+2. VS Code Environment Setup for InputTo accept real-time console input, ensure Code Runner is configured to interact with the terminal.Fix: Open VS Code Settings $\rightarrow$ search for "Code Runner" $\rightarrow$ scroll down and ensure the box for Run In Terminal is checked.
+3. The scanf FunctionThe scanf function reads formattable input directly from the standard input stream (terminal).Syntax Structure: scanf("%d", &age);The Address-of Operator (&): The ampersand prefix is crucial because it points directly to the memory address of the variable where the data should be saved. (Note: This concept will be explored in depth later under Pointers).
+4. Handling the Character Input TrapWhen accepting multiple inputs sequentially, a common bug occurs where scanf skips character collection entirely.The Cause: When entering the previous value (like marks) and hitting Enter, a newline character (\n) is generated. The %c specifier automatically swallows this trailing newline instead of waiting for your intended character input.The Solution: Place a leading white space before the format specifier in your code:scanf(" %c", &grade); // The space forces the compiler to ignore whitespace/newlines and wait for a character.
+### 5. Writing User-Friendly Programs
+Instead of prompting blank screens, sandwich `scanf` statements around informative `printf` requests to build clean console interfaces.
+
+```c
+#include <stdio.h>
+
+int main() {
+    int age = 0;
+    float marks = 0.0;
+    char grade;
+
+    printf("Enter Age: ");
+    scanf("%d", &age);
+
+    printf("Enter Marks: ");
+    scanf("%f", &marks);
+
+    printf("Enter Grade: ");
+    scanf(" %c", &grade); // Note the space before %c
+
+    // Outputting formatted variables
+    printf("You are %d years old.\n", age);
+    printf("Marks: %.2f\n", marks);
+    printf("Grade: %c\n", grade);
+
+    return 0;
+}
