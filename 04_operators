@@ -1,0 +1,61 @@
+Operators
+Video link - https://youtu.be/9iGK5PlljIs?si=f_uZH727x5ZIeCiE
+
+Notes
+
+1. Arithmetic Operators
+Used to perform basic mathematical operations on numerical variables (e.g., x = 10, y = 3).
+
+Addition (+): x + y outputs 13.
+
+Subtraction (-): x - y outputs 7.
+
+Multiplication (*): x * y outputs 30.
+
+Division (/): x / y performs integer division if variables are integers, outputting 3 (truncating decimal places). To get a precise floating-point output like 3.333333, declare the variables as float and use the %f format specifier.
+
+Modulo/Remainder (%): x % y returns the remainder of the division. For 10 % 3, the output is 1.
+
+2. Relational Operators
+Used to compare two values. They return 1 for True and 0 for False.
+
+Greater Than (>): x > y returns 1 (True).
+
+Less Than (<): x < y returns 0 (False).
+
+Equality (==): Compares values. Note that a single = is an assignment operator (stores a value), while == is used for comparison. x == y returns 0 (False).
+
+Not Equal To (!=): x != y returns 1 (True).
+
+3. Assignment Operators
+Used to assign and modify values shortcutting basic arithmetic.
+
+x += 5 is equivalent to x = x + 5 (updates 10 to 15).
+
+x -= 5 is equivalent to x = x - 5.
+
+x *= 5 is equivalent to x = x * 5.
+
+x /= 5 is equivalent to x = x / 5.
+
+4. Logical Operators
+Used to combine conditional statements. To use boolean representations (true/false), include the header file #include <stdbool.h>.
+
+Logical AND (&&): Returns True (1) only if both conditions/operands are true. If x = true and y = false, x && y evaluates to 0 (False).
+
+Logical OR (||): Returns True (1) if at least one condition/operand is true. x || y evaluates to 1 (True).
+
+Logical NOT (!): Reverses the boolean state. !(x || y) evaluates to 0 (False) because the inner condition is True.
+
+5. Increment and Decrement Operators
+Used to increase or decrease a variable's value by 1.
+
+Increment (++): Adds 1 to the variable (x++ or ++x).
+
+Decrement (--): Subtracts 1 from the variable (x-- or --x).
+
+Post-Fix vs. Pre-Fix Behavior:
+
+Post-Increment (x++): The current value of x is evaluated/printed first, and then the variable is incremented in memory. Printing x++ when x = 10 outputs 10. A subsequent call to x will reveal it has become 11.
+
+Pre-Increment (++x): The variable is incremented first, and then its new value is evaluated/printed. Printing ++x when x = 10 outputs 11 immediately.
