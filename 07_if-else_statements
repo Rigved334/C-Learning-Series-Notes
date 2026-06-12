@@ -1,0 +1,56 @@
+If-Else Statements
+Video link - https://youtu.be/yG_c4ouzK8g?si=DfV1elmj-fX_Bn1X
+
+Notes
+
+1. Understanding If-Else Syntax
+If-Else statements control the flow of a program by executing specific code blocks based on conditional logic.
+
+C
+if (condition1) {
+    // Executes if condition1 is true
+} 
+else if (condition2) {
+    // Executes if condition1 is false AND condition2 is true
+} 
+else {
+    // Executes only if all preceding conditions are false
+}
+2. Basic Comparison Example
+When comparing two numbers (int a = 10; int b = 20;):
+
+if (a > b) checking fails because 10 is not greater than 20.
+
+The program automatically jumps to the fallback else block, executing printf("b > a");.
+
+3. Practical Multi-Condition Program: Grading System
+To manage multiple numeric brackets cleanly, combine relational operators (>, <, >=) with logical operators. In this context, the Logical AND (&&) operator ensures that a block of code executes only if the input falls correctly within both the lower and upper bounds of a specific range.
+
+Complete Example Program Structure:
+C
+#include <stdio.h>
+
+int main() {
+    float marks = 0.0;
+
+    printf("Enter your marks: ");
+    scanf("%f", &marks);
+
+    if (marks >= 90.0) {
+        printf("Your grade is A\n");
+    } 
+    else if (marks >= 80.0 && marks < 90.0) {
+        printf("Your grade is B\n");
+    } 
+    else if (marks >= 70.0 && marks < 80.0) {
+        printf("Your grade is C\n");
+    } 
+    else if (marks >= 60.0 && marks < 70.0) {
+        printf("Your grade is D\n");
+    } 
+    else {
+        printf("Your grade is F\n"); // Triggers automatically if marks are below 60
+    }
+
+    return 0;
+}
