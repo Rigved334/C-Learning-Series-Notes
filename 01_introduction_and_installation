@@ -1,0 +1,37 @@
+Introduction and Installation
+Video link - https://youtu.be/H8GEflRg5lw?si=liNxrnvsupnOxpHj
+
+Notes
+
+C Programming Environment Setup
+Language Characteristic: C is a compiled (not interpreted) language, which gives it high execution speed. It serves as the architectural foundation for many modern programming languages.
+
+Workspace Initialization: The tutorial uses Visual Studio Code. To start, open a folder in VS Code and create your primary file using the standard extension: main.c.
+
+1. Compiler Installation (GCC)
+Check Status: Run gcc --version in the terminal to see if a compiler is already installed.
+
+Download MSYS2: If the terminal returns an error, go to msys2.org, download the installer, and follow the provided setup instructions.
+
+Configure Environment Variables (Windows):
+
+Navigate to the MSYS2 binary directory (typically C:\msys64\ucrt64\bin).
+
+Verify gcc.exe is in this folder, then copy the folder's path.
+
+Search Windows for Environment Variables, edit the system Path variable, add a new entry, and paste the copied path.
+
+2. VS Code Configuration
+Extensions to Install:
+
+C/C++ (by Microsoft)
+
+Code Runner
+
+Code Runner Settings: Open VS Code settings, search for "Code Runner," and check the following boxes for a smoother workflow:
+
+Clear previous output
+
+Run in terminal
+
+Save file before run
