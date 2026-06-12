@@ -1,0 +1,49 @@
+Variables and Data Types
+Video link - https://youtu.be/2vo2IEASg8Q?si=wuy2Gafc2KcdRBBR
+
+Notes
+
+Here are the concise and precise notes from the third video in your C series covering Variables and Data Types:
+
+Variables and Data Types
+Variables act as containers (identifiers) that store values of a specific data type. In C, you must declare the data type before using a variable.
+
+Core Data Types, Format Specifiers, and Sizes
+
+int (Integer)
+
+Use: Stores whole numbers (e.g., 18).
+
+Format Specifier: %d
+
+Size (Modern Compilers): 4 bytes
+
+float (Floating-Point)
+
+Use: Stores numbers with decimal values (e.g., 90.99). By default, it prints up to 6 decimal places.
+
+Format Specifier: %f
+
+Precision Control: Use %.2f to restrict the output to exactly two decimal places.
+
+Size (Modern Compilers): 4 bytes
+
+double (Double-Precision Floating-Point)
+
+Use: Stores decimal numbers requiring higher precision, such as the exact value of Pi (3.141592).
+
+Format Specifier: %lf
+
+Size (Modern Compilers): 8 bytes
+
+char (Character)
+
+Use: Stores a single character enclosed in single quotes (e.g., 'A').
+
+Format Specifier: %c
+
+Size (Modern Compilers): 1 byte
+
+Printing Variables
+To output a variable's value, use printf with the corresponding format specifier inside the double quotes, followed by a comma and the variable name. The compiler inserts the variable's value wherever the format specifier is placed.
+Example: printf("%d", age);
