@@ -1,0 +1,27 @@
+Type Conversions
+Video link - https://youtu.be/i4B3id4LDnk?si=BmQXAK7XwhY563mC
+
+Notes
+
+Type Conversions in C
+Type conversion refers to converting a variable from one data type to another. In C, this happens in two ways: Implicit and Explicit.
+
+Implicit Type Conversion (Automatic)
+
+This conversion is handled automatically by the compiler without user intervention.
+
+For example, declaring int a = 10; automatically directs the compiler to interpret and store the literal value as an integer type.
+
+Similarly, if you assign a floating-point variable to an integer variable (e.g., int b = a; where a is 10.99), the compiler implicitly handles the data transfer. However, it truncates the fractional part (.99) and saves only the whole integer portion (10) to memory.
+
+Explicit Type Conversion (Type Casting)
+
+This conversion is explicitly performed by the programmer using a casting operator.
+
+Syntax: Place the target data type inside parentheses directly before the variable to be converted: (target_type) variable;
+
+Example:
+
+C
+float a = 10.99;
+int b = (int)a; // Explicitly casts the float 'a' into an integer before assignin
