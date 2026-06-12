@@ -1,0 +1,13 @@
+Loops
+Video link - https://youtu.be/AKhyw-gIl70?si=3J-B48sOcJ51XxX0
+
+Notes
+
+Loops in C 
+Loops are control structures used to repeat a block of code multiple times as long as a specified condition remains true.
+1. For Loop Best used when you know exactly how many times the loop should execute.Syntax: for (initialization; condition; increment/decrement) { ... }Key Detail: The three components inside the for statement must be separated by semicolons (;).Execution Workflow:Initialization: Runs once (e.g., int i = 0;).Condition Check: If true (e.g., i < 5), the block executes.Increment/Decrement: Updates the iterator (e.g., i++) after the block code executes, then checks the condition again.Example: Prints "Hello" 5 times (for $i = 0, 1, 2, 3, 4$).
+2. While Loop Best used when the number of iterations is not known beforehand, relying strictly on a condition.Syntax: while (condition) { ... }Execution Workflow:Checks the condition first. If true, it enters the loop body.You must manually include an increment/decrement step inside the block (e.g., i++;) to modify the iterator, otherwise, it creates an infinite loop.Example: Checks i < 5, prints "Hello", increments i, and repeats.
+3. Do-While Loop An exit-controlled loop that guarantees execution at least once, regardless of whether the condition is initially true or false.
+Syntax:C do {
+    // block of code
+} while (condition); // Note the trailing semicolon here
