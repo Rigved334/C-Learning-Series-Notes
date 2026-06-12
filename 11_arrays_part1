@@ -1,0 +1,47 @@
+Arrays part 1
+Video link - https://youtu.be/hLCKw4tKzsg?si=9cH_HUkog6AdHDum
+
+Notes
+
+1. What is an Array?
+An array is a collection of elements of the same data type stored sequentially under a single variable name. It is used when you need to manage multiple related values without creating distinct variables for each.
+
+2. Syntax and Declaration
+To declare an array, specify the data type, the identifier name, and the total capacity (size) inside square brackets []. Elements are assigned within curly braces {}.
+
+Integer Array: int arr[5] = {1, 2, 3, 4, 5};
+
+Floating-Point Array: float marks[4] = {90.5, 85.2, 77.8, 92.1};
+
+Character Array: char word[5] = {'H', 'E', 'L', 'L', 'O'};
+
+Note: In C, there is no native primitive string data type. Instead, strings are implemented via character arrays.
+
+3. Indexing and Accessing Elements
+Array indexing is strictly zero-based. The first element is stored at index 0, the second at index 1, up to size - 1.
+
+The Base Address Bug: Attempting to print the array variable directly without an index (e.g., printf("%d", arr);) outputs a memory address or garbage value rather than the data contents.
+
+Accessing Specific Data: To reference a particular element, use its index location:
+
+printf("%d", arr[1]); // Accesses index 1, which prints the second element (2)
+
+
+### 4. Iterating Through Arrays using Loops
+To output or process all array elements sequentially, traverse the indexes using a loop from `0` to `size - 1`.
+
+#### Example Traversal Implementations:
+
+* **Printing an Integer Array:**
+  ```c
+for (int i = 0; i < 5; i++) {
+    printf("%d ", arr[i]);
+}
+Printing a Character Array (String):
+
+for (int i = 0; i < 5; i++) {
+printf("%c", word[i]); // Outputs the individual characters together as "HELLO"
+}
+
+
+* **Out-of-Bounds Behavior:** If your iteration loop exceeds the allocated array bounds (e.g
