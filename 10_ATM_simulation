@@ -1,0 +1,12 @@
+ATM Simulation Practice Program
+Video link - https://youtu.be/OGOxCtavOZ8?si=QcFv6IRj1rPcx5oh
+
+Notes
+
+Project Overview
+The project implements a console-based ATM Simulation using loops, conditional execution (if-else), variable updates, and a switch-case architecture.Key Structural ComponentsContinuous Execution Loop (while)To keep the ATM software running dynamically after an action finishes, the program implements a loop controlled by a state variable: int running = 1;.The loop structure while (running) executes infinitely until the variable state is explicitly altered to 0 (False).Interactive System MenuThe user is presented with four operational choices captured through scanf("%d", &choice);:Check BalanceDeposit MoneyWithdraw MoneyExitImplementation Logic by Case
+Case 1: Check BalanceOutputs the current value stored in the balance variable via printf.
+Case 2: Deposit MoneyPrompts the user to enter a numeric value into the amount variable.Input Validation: Executes an if (amount <= 0) check. If true, it displays an error warning specifying that the deposit value must be greater than zero.Balance Accumulation: If validation passes, it performs a compound addition to mutate the balance state:Cbalance += amount; // Updates and stores the new calculation instantly
+Case 3: Withdraw MoneyPrompts the user to input the withdrawal target amount.Dual-Layer Validation Checks:Checks if the target amount is invalid or zero: if (amount <= 0)Checks if the target amount exceeds total liquidity: else if (amount > balance) $\rightarrow$ Triggers an "Insuﬃcient Balance" warning.Balance Reduction: If both validations clear, it subtracts the funds using a compound subtraction:Cbalance -= amount;
+Case 4: Exit ProgramTo cleanly abort the execution loop, the state tracker is updated: running = 0;. When the while loop checks its condition at the start of the next cycle, it reads it as false and safely skips the menu loop block to hit return 0;.
+Default CaseServes as an input guard. If a user provides an option outside the 1–4 scope, it triggers a text warning requesting a valid menu index entry.
