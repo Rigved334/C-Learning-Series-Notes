@@ -1,0 +1,35 @@
+Multidimensional Arrays
+Video Link - https://youtu.be/PWt6LwtpuYc?si=tin9d540QeMBiGql
+
+Notes
+
+Arrays in C - Part 2 (Multidimensional Arrays)
+1. 2D Arrays (Matrices)
+Concept: A 2D array is fundamentally an array of arrays, commonly visualized as a matrix containing rows and columns.
+
+Declaration & Initialization: Created using two sets of square brackets for dimensions and nested curly braces for elements. You must specify the bounds to avoid compilation errors.
+
+C
+int array[3][3] = {
+    {1, 2, 3},  // Row 0
+    {4, 5, 6},  // Row 1
+    {7, 8, 9}   // Row 2
+};
+*   **Accessing Elements:** C uses **zero-based indexing** for both rows and columns.
+    *   To access `6` (2nd row, 3rd column): `array[1][2]`
+    *   To access `7` (3rd row, 1st column): `array[2][0]`
+
+### 2. 3D Arrays
+*   **Concept:** Best conceptualized as an array of 2D matrices. 
+*   **Access Pattern:** Requires three indices: `array[matrix_index][row_index][column_index]`.
+    *   **Step 1:** Select the outer target matrix (the index of the specific 2D array block).
+    *   **Step 2:** Select the target row within that matrix.
+    *   **Step 3:** Select the target column within that row.
+
+### 3. N-Dimensional Arrays (e.g., 4D Arrays)
+*   **Concept:** You can extend C arrays to any dimension by continuing to nest structures. A 4D array can be visualized as a 2D matrix where every individual cell contains its own independent 2D matrix.
+*   **Access Pattern:** Always filter iteratively from the outermost structure to the innermost element.
+    *   Syntax: `array[outer_row][outer_col][inner_row][inner_col]`
+    *   *Example:* `array[2][0][0][0]` accesses the 3rd row and 1st column of the main matrix, and then fetches the element at the 1st row and 1st column of that nested sub-matrix.
+
+**Key Takeaway:** Regardless of how many dimensions an array has in C, element retrieval follows a strict top-down narrowing process (outermost dimension to innermost dimension), with every dimension adhering to `0` to `n-1` index spacing.
