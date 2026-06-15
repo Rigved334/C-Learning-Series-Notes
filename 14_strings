@@ -1,0 +1,51 @@
+Strings in C
+Video Link - https://youtu.be/LJr0OoUnlpI?si=PVvXBCRH1b8uCMEV
+
+Notes
+
+Strings in C
+1. Basics of Strings in C
+
+Concept: C does not have a native string data type. Instead, strings are implemented as character arrays (char arrays) enclosed in double quotes.
+
+Format Specifier: To print or take input for a string, use the %s format specifier.
+
+Declaration: You must allocate memory size when declaring the character array.
+
+C
+char string[50] = "Hello";
+
+**2. Taking String Input**
+*   **Using `scanf`:**
+    *   **Syntax:** `scanf("%s", string);`
+    *   **Crucial Rule:** Do **not** use the address-of operator (`&`) with strings in `scanf`. 
+    *   **Limitation:** `scanf` stops reading input as soon as it encounters a space. It only captures the first word.
+*   **Using `fgets` (For multi-word input):**
+    *   To capture a full sentence containing spaces, use `fgets` instead of `scanf`. It stops reading when it hits a new-line character (Enter key).
+    *   **Syntax:** `fgets(variable_name, size, stdin);`
+    *   **Example:** `fgets(string, 50, stdin);`
+
+**3. Built-in String Functions (`<string.h>`)**
+To use string manipulation functions, you must include the `<string.h>` header file at the top of your program.
+
+*   `strlen()` **- String Length:**
+    *   Calculates the number of characters in a string.
+    *   Returns an integer value.
+    *   **Example:** `int len = strlen(string);`
+
+*   `strcpy()` **- String Copy:**
+    *   Copies the contents of one string into another.
+    *   **Syntax:** `strcpy(destination, source);`
+    *   **Example:** `strcpy(string2, string1);` (Copies `string1` into `string2`).
+
+*   `strcat()` **- String Concatenation:**
+    *   Merges/appends one string to the end of another.
+    *   **Syntax:** `strcat(destination_string, string_to_append);`
+    *   **Example:** `strcat(string1, string2);` (Appends `string2` to the end of `string1`).
+
+*   `strcmp()` **- String Compare:**
+    *   Compares two strings to see if they are identical.
+    *   **Returns `0`**: If both strings are exactly the same.
+    *   **Returns a negative value (e.g., `-1`)**: If they are different and string 1 is smaller/shorter than string 2.
+    *   **Returns a positive value**: If they are different and string 1 is larger/longer than string 2.
+    *   **Example:** `strcmp(string1, string2);` (Print with `%d`).
