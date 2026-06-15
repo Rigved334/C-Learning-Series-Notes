@@ -1,0 +1,72 @@
+Matrix Multiplication Program
+Video Link - https://youtu.be/vkFAnrxfSWo?si=U6eBRxE-HOeiATEM
+
+Notes
+
+Matrix Multiplication in C1. Prerequisites and Mathematical RulesCondition for Multiplication: Two matrices A and B can only be multiplied if the number of columns in A equals the number of rows in B (colA == rowB).Resultant Matrix Dimensions: If A is an $m \times n$ matrix and B is an $n \times p$ matrix, the resulting matrix C will have the dimensions $m \times p$ (rowA $\times$ colB).2. Program Structure and FlowVariable Initialization: Define variables for dimensions (rowA, colA, rowB, colB) and initialize them (e.g., to 0) before taking user input.User Input (Dimensions): Prompt the user to input the number of rows and columns for both matrices A and B.Validation Check: Wrap the core logic in an if (colA == rowB) statement. If false, output an error message like "Invalid number of rows and columns".Array Declaration: Declare the 2D arrays dynamically using the user-provided dimensions: int A[rowA][colA], int B[rowB][colB], and int C[rowA][colB].User Input (Elements):Use nested for loops (outer loop for rows i, inner loop for columns j) to iterate and read elements into A and B.Inputting data row-wise means the inner loop advances the column index while the outer loop holds the row index steady.Initialize Matrix C: Before calculating the product, initialize all elements of the resultant matrix C to 0 to clear out any garbage values. Use a nested loop C[i][j] = 0.3. The Multiplication Logic (Core Algorithm)Matrix multiplication requires three nested loops:Outer loop i: Iterates over the rows of matrix A (from 0 to rowA - 1).Middle loop j: Iterates over the columns of matrix B (from 0 to colB - 1).Inner loop k: Facilitates the dot product by iterating over the shared dimension (columns of A or rows of B).The Calculation Step: ```cfor(int i = 0; i < rowA; i++) {for(int j = 0; j < colB; j++) {for(int k = 0; k < colA; k++) { // colA or rowB can be used hereC[i][j] += A[i][k] * B[k][j];}}}
+4. Displaying the OutputUse standard nested loops (i up to rowA, j up to colB) to print C[i][j].Include a space after each element.Include a newline character \n after the inner loop finishes to format the output as a proper mathematical grid/matrix.
+
+Code
+
+#include <stdio.h>
+
+int main(){
+
+    int rowA = 0, colA = 0, rowB = 0, colB = 0;
+
+    printf("enter the rows of matrix A: ");
+    scanf("%d", &rowA);
+    printf("enter the columns of matrix A: ");
+    scanf("%d", &colA);
+    printf("enter the rows of matrix B: ");
+    scanf("%d", &rowB);
+    printf("enter the columns of matrix B: ");
+    scanf("%d", &colB);
+    
+    printf("enter the elements of A row-wise:-\n");
+    int A[rowA][colA];
+    for(int i = 0; i < rowA; i++){
+        for(int j = 0; j < colA; j++){
+            scanf("%d", &A[i][j]);
+        }
+    }
+    
+    printf("enter the elements of B row-wise:-\n");
+    int B[rowB][colB];
+    for(int i = 0; i < rowB; i++){
+        for(int j = 0; j < colB; j++){
+            scanf("%d", &B[i][j]);
+        }
+    }
+
+    int C[rowA][colB];
+    for(int i = 0; i < rowA; i++){
+        for(int j = 0; j < colB; j++){
+            C[i][j] = 0;
+        }
+    }
+
+    if(colA == rowB){
+        for(int i = 0; i < rowA; i++){
+            for(int j = 0; j < colB; j++){
+                for(int k = 0; k < colA; k++){
+                    C[i][j] += A[i][k] * B[k][j];
+                }
+            }
+        }
+    
+
+        for(int i = 0; i < rowA; i++){
+            for(int j = 0; j < colB; j++){
+                printf("%d ", C[i][j]);
+            }
+            printf("\n");
+        }
+    }
+
+    else{
+        printf("invalid number of rows and columns\n");
+    }
+
+    return 0;
+}
