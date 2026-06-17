@@ -1,0 +1,45 @@
+Recursion in C 
+Video link - https://youtu.be/rgdGebX78X8?si=InvYM6PxMhjhIyy6
+
+Notes
+
+Core Premise
+A practical explanation of recursion in C programming, demonstrating how functions can call themselves to solve problems through countdown and factorial examples.
+
+Key Concepts
+
+Recursion: A programming technique where a function calls itself to break down a larger problem into smaller, more manageable sub-problems.
+
+Base Condition: A crucial terminal state within a recursive function that stops further recursive calls, preventing infinite loops.
+
+Call Stack Execution: Recursive calls stack up until the base condition is met, after which the function resolves and returns values back up the chain.
+
+Detailed Breakdown
+
+The Mechanics of Recursion
+Recursion requires two main components to function correctly: a base condition and a recursive step. Without a base condition, the function would call itself indefinitely. The return keyword is used to pass the computed values back to the preceding function calls.
+
+Example 1: Countdown Function
+Objective: To print numbers in descending order from a given integer n down to 1.
+
+Structure: A void return type function named countdown taking an integer n.
+
+Base Condition: if (n == 0), the function simply returns, terminating the execution.
+
+Recursive Step: The function prints the current value of n, and then immediately calls itself with the argument n - 1.
+
+Execution Flow: If passed 5, it prints 5, calls countdown(4), prints 4, calls countdown(3), and so on until countdown(0) triggers the base condition and ends the process.
+
+Example 2: Factorial Function
+Objective: To calculate the factorial of a given integer n (e.g., 4! = 4 * 3 * 2 * 1).
+
+Structure: An int return type function named factorial taking an integer n.
+
+Base Condition: if (n == 0), the function returns 1, because the factorial of 0 is mathematically defined as 1.
+
+Recursive Step: The function executes return n * factorial(n - 1).
+
+Execution Flow: If calculating factorial(4), it returns 4 * factorial(3). This expands to 4 * 3 * factorial(2), continuing until it hits factorial(0). Once factorial(0) returns 1, the expression collapses back up as 1 * 1 * 2 * 3 * 4, yielding the final answer.
+
+Conclusions
+Recursion is an effective method for simplifying complex, repetitive tasks into smaller steps by using self-referential function calls and a strict termination condition. The next logical progression in understanding C, as noted at the end, is the study of pointers.
