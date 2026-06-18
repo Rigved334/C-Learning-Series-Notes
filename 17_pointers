@@ -1,0 +1,35 @@
+Pointers in C 
+Video link - https://youtu.be/cAQJW0Ph6Qo?si=xpNEhaDhJtclAoqI
+
+Notes
+
+Core Premise: An introductory technical guide to understanding, declaring, and utilizing pointers to manage and reference memory addresses in the C programming language.
+
+Key Concepts:
+
+Definition of Pointers: Special variables designed strictly to store the memory addresses of other variables rather than standard data values.
+
+Fundamental Operators: Utilization of the dereference operator (*) for declaration and the address-of operator (&) for assignment.
+
+Memory Visualization: Memory addresses are represented and accessed as hexadecimal values within the system.
+
+Format Specifiers: The %p format specifier is required to accurately print memory addresses via standard output functions.
+
+Pointer Assignment: Pointers can share memory addresses, allowing multiple pointer variables to reference the same base variable's location.
+
+Detailed Breakdown:
+
+Introduction to Pointers
+Pointers are foundational tools in low-level languages like C and C++. They are essential for advanced programming concepts, including building complex data structures and optimizing problem-solving operations by allowing direct memory manipulation.
+
+Syntax, Initialization, and Assignment
+To create a pointer, the dereference operator (an asterisk, *) is used during declaration. For example, declaring int *P; creates a pointer named P intended to hold the address of an integer variable.
+To assign a value to this pointer, the address-of operator (&) is used. If an integer variable A exists (e.g., initialized with a value of 10), the pointer is assigned its address using the syntax P = &A;. This explicitly commands the pointer P to hold the physical memory location of A rather than its literal value (10). Attempting to assign the value directly without the & operator results in undefined behavior.
+
+Memory Addresses and Format Specifiers
+When inspecting the contents of a pointer, the goal is to view the raw memory address it points to. In C, printing a pointer's stored address requires the %p format specifier. Executing this will output a hexadecimal string representing the exact location of the referenced variable within the device's memory.
+
+Pointer Address Sharing
+When working with multiple pointers, a new pointer can be assigned the address stored in an existing pointer. For instance, if a second pointer Q is created, it can be assigned the value of P simply by writing Q = P;. Because P holds the address of the original variable A, Q will now also hold the exact same memory address. Printing the addresses of A, P, and Q in this scenario will yield three identical hexadecimal values, proving they all reference the same memory location.
+
+Conclusions: Pointers are critical for direct memory referencing in C, utilizing specific syntax (* and &) and format specifiers (%p) to track data locations. Mastering these fundamentals is the prerequisite for advancing into more complex memory operations, specifically pointer arithmetic and array management.
