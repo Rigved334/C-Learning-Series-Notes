@@ -1,0 +1,20 @@
+Pointer Arithmetic in C
+Video Link - https://youtu.be/ApVRKHYpWfQ?si=z7tVVt11vX_texWn
+
+Notes
+
+Core Premise
+This video explains the mechanics of pointer arithmetic in C, demonstrating how mathematical operations on pointers manipulate memory addresses based on data type sizes, and how these concepts facilitate efficient array traversal.
+
+Key Concepts
+Pointers store memory addresses, which can be visualized using the %p format specifier.Adding to or subtracting from a pointer shifts the memory address by a multiple of the underlying data type's byte size, not by literal single bytes.An array's variable name inherently functions as a pointer to the array's very first element.Arrays can be dynamically traversed by combining pointer math with the dereference operator (*) instead of using traditional bracket notation.
+
+Detailed Breakdown
+Mechanics of Pointer Math
+When a pointer is mathematically incremented (e.g., P + 1), the compiler does not merely add a value of 1 to the least significant bit of the raw memory address.Instead, the address shifts by the exact size of the data type it points to. For example, if a pointer points to an integer (typically 4 bytes in modern compilers like GCC), executing P + 1 advances the memory address by exactly 4 bytes.Subtracting from a pointer similarly reverses the address by the corresponding data type's byte size.The general evaluation for an expression like P + N is: Original_Address + (N * Size_of_Data_Type).The Relationship Between Arrays and PointersIn C, declaring an array creates a variable that acts as a base pointer.Checking the memory address of the array variable itself (arr) and comparing it to the address of the array's first index (&arr[0]) yields the exact same memory location, proving they are functionally identical in this context.
+
+Traversing Arrays via Pointer Arithmetic
+Because an array name is essentially a pointer, you can iterate through its elements using pointer arithmetic rather than standard indexing (like arr[i]).In a loop structure, the expression arr + i dynamically computes the exact memory address of the $i^{th}$ element by adding $i$ times the data type size to the base address.To extract the actual data stored at that newly calculated address, the dereference operator (*) must be prepended to the expression, formatted as *(arr + i).
+
+Conclusions
+Understanding pointer arithmetic is crucial for low-level memory navigation in C. By grasping that pointers scale by data type size and that arrays are essentially base pointers, developers can access and manipulate memory blocks directly, setting the foundation for more advanced operations like passing pointers through functions.
