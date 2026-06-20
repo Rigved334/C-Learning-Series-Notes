@@ -1,0 +1,31 @@
+Pointers and Functions
+Video link - https://youtu.be/72zO-3bth2k?si=2ZLjCXSFHB_IoKPX
+
+Notes
+
+Core Premise
+This video explains the difference between pass-by-value and pass-by-reference in C programming, demonstrating how pointers are used within functions to modify original variables.
+
+Key Concepts
+Pass-by-Value: Passes a copy of the variable; changes do not affect the original.
+
+Pass-by-Reference: Passes the memory address of the variable; changes affect the original.
+
+Pointers in Functions: Function parameters defined as pointers (*) to accept memory addresses.
+
+Address-of Operator (&): Used during function calls to pass the exact memory location of a variable.
+
+Dereference Operator (*): Used within the function to access and manipulate the value stored at the memory address.
+
+Detailed Breakdown
+Limitations of Pass-by-Value
+When a variable is passed to a function simply by its value, the program creates a local copy of that variable in memory. Any modifications (such as reassigning the value to 100) are performed on the copy. Once the function exits, the original variable in the main function remains completely unchanged. This limitation becomes obvious when attempting to write a function to swap two variables, as standard pass-by-value will only swap the locally scoped copies.
+
+Implementing Pass-by-Reference
+To alter the original variables, the function must use pass-by-reference. This is implemented by declaring the function parameters as pointers (e.g., int *x). When calling the function, the arguments are passed using the address-of operator (e.g., &a), explicitly sending the variables' memory addresses rather than their values.
+
+Swapping Variables using Pointers
+In a successful swap function utilizing pass-by-reference, a temporary integer variable is used to hold the value during the swap. The dereference operator (*) is applied to the pointer variables (e.g., *x and *y) to directly access and overwrite the values residing at the provided memory addresses. Because the operations happen at the memory level, the original variables in the calling function are successfully swapped.
+
+Conclusions
+To permanently modify or swap variables across different function scopes in C, developers must use pass-by-reference by passing memory addresses to pointer parameters and utilizing the dereference operator to manipulate the underlying data.
