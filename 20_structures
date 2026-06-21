@@ -1,0 +1,35 @@
+Structures in C
+Video link - https://youtu.be/0z0SLPIKnH8?si=UHyH13TxcDQdLtg5
+
+Notes
+
+Core Premise
+A comprehensive guide to understanding and implementing structures (struct) in the C programming language to collect and manage diverse data types under a single identifier.
+
+Key Concepts
+Definition: A structure is a user-defined data type that acts as a collection of different data types, distinguishing it from arrays which can only store elements of the identical data type.
+
+Syntax: Declared using the struct keyword followed by a template name, with member declarations enclosed in curly braces and terminated by a semicolon.
+
+Member Access: The dot (.) operator serves as the primary mechanism to assign values to or retrieve values from individual fields of a structure instance.
+
+Initialization Strategies: Structure variables can be populated sequentially via element-by-element assignment or all at once using an ordered initializer list.
+
+Detailed Breakdown
+Declaring a Structure Template
+Code structure begins by placing the declaration outside the main function to establish global accessibility.
+
+Members are defined inside the block with standard C data types, such as grouping an int age, a float marks, and a char grade to describe a student entity.
+
+Syntax strictness requires a trailing semicolon immediately following the closing brace of the structure's definition block.
+
+Creating Instances and Assigning Data
+Dot Operator Assignment: A structure instance is declared within a function using the syntax struct StructureName variableName;. Individual member fields are filled line-by-line by chaining the variable name, a dot, and the member name.
+
+Inline Initializer Lists: To streamline initialization, values can be provided inside a set of curly braces at the point of declaration. This approach maps values to fields strictly based on the order in which the members were defined in the original template.
+
+Printing and Accessing Values
+Data reading follows the same dot-notation format as assignment. When using output functions like printf, format specifiers must match the respective data type of the structural member being fetched.
+
+Conclusions
+Structures provide an essential architectural paradigm in C for modeling real-world entities cleanly. Grouping related variables together improves code readability and sets the foundation for working with complex data schemas, including nested structures.
