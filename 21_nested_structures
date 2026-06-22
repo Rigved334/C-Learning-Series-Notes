@@ -1,0 +1,37 @@
+Nested Structures in C
+Video link - https://youtu.be/seB6yegTQUI?si=fLycvoRBck3AE_lk
+
+Notes
+
+Core Premise
+The video provides a comprehensive tutorial on how to define, initialize, and access nested structures within the C programming language to organize complex data types logically.
+
+Key Concepts
+Nested Structures Definition: The ability to embed one structure as an attribute within another outer structure.
+
+Order of Declaration: The nested (inner) structure must be defined before the outer structure to prevent compilation errors.
+
+Member Access: Using the chained dot (.) operator to access attributes of the inner structure.
+
+Initialization Methods: Populating structure values line-by-line versus using inline nested array initializers.
+
+Detailed Breakdown
+Defining Nested Structures
+To create a nested structure, the inner structure must be declared prior to the outer structure that will use it. For instance, if a car structure relies on an engine structure, the engine (containing attributes like cylinders and horsepower) must be defined first. This ensures the compiler recognizes the data type when it is referenced as an identifier inside the car structure.
+
+Member-by-Member Initialization
+When populating the structure line-by-line:
+
+Strings: Requires including the <string.h> header file to use functions like strcpy for assigning string attributes (e.g., a car's model).
+
+Standard Attributes: Outer structure variables are accessed and assigned values normally (e.g., car1.age or car1.price).
+
+Nested Attributes: Inner structure variables are accessed by chaining the dot operator, stepping through the outer identifier to the inner identifier, and finally to the specific attribute (e.g., car1.engine.cylinders = 16).
+
+Array Initialization Syntax
+Instead of repetitive line-by-line assignments, C allows for simultaneous initialization during declaration using curly braces. Because the outer structure contains another structure, the syntax requires nested curly braces. The values must correspond exactly to the order of attributes defined in the structs.
+
+Example Setup: {"Bugatti", 1, 46.5, {16, 1500}} cleanly maps the outer car attributes and embeds the inner engine attributes (16 cylinders, 1500 horsepower) seamlessly.
+
+Conclusions
+Nested structures are a highly efficient way to model complex, real-world data hierarchies in C. They can be dynamically interacted with using chained dot notation or rapidly initialized using nested array syntax. The series will transition to File Handling in the subsequent lesson.
