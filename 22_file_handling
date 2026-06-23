@@ -1,0 +1,51 @@
+File Handling in C
+Video link - https://youtu.be/dWLOu8Pep-U?si=J7sBdObR7vd8i_EJ
+
+Notes
+
+Core Premise
+This video explains the fundamental concepts of file handling in the C programming language, demonstrating how to create, read, write, append, and safely close text and binary files using standard library functions.
+
+Key Concepts
+Standard Library Requirement: File operations require the inclusion of the <stdio.h> header file.
+
+File Pointers: All file operations are managed using a file pointer (FILE *).
+
+Basic File Operations: The standard workflow involves opening a file, verifying its existence (safety check), performing read/write operations, and closing the file to prevent memory leaks.
+
+Access Modes: Files can be opened in various modes such as write (w), read (r), and append (a), dictating the permissible operations.
+
+String Processing: Reading text relies on character buffers (e.g., passing a buffer array) to safely store and output extracted data line by line.
+
+Detailed Breakdown
+File Initialization and Verification
+To interact with a file, a pointer of type FILE is declared and assigned the output of the fopen() function. fopen() requires two arguments: the file name (or path) and the access mode. Before performing any operations, it is critical to implement a safety check to verify if the file pointer is equal to NULL. If it is NULL, the file does not exist or cannot be accessed, and the program should safely exit (e.g., returning 1 for an error) to avoid a crash.
+
+Writing and Appending to Files
+Write Mode (w): Opens a file for writing. If the file already exists, its contents are completely overwritten. If it does not exist, a new file is created.
+
+Append Mode (a): Opens a file to add content to the end of it, preserving all existing data.
+
+Writing Data: The fprintf() function is used similarly to standard printf(), but it takes the file pointer as its first argument to direct the formatted string output into the target file.
+
+Reading from Files
+Read Mode (r): Opens a file strictly for reading.
+
+Reading Data: The fgets() function extracts formatted strings from the file. It requires three arguments: a character buffer (an empty string/array to temporarily store the data), the maximum size of the buffer, and the file pointer.
+
+Iteration: To read the entire file, fgets() is typically placed inside a while loop that continuously checks that the retrieved text is not NULL, printing the buffer's contents to the console during each iteration.
+
+Resource Management
+After all file operations are complete, the fclose() function must be called, passing the file pointer as its argument. Failing to close files leaves dangling pointers which can lead to memory leaks and resource locks.
+
+Advanced Modes and Functions
+The tutorial also outlines extended file handling capabilities available in C:
+
+Extended Modes: Adding a + (e.g., w+, r+, a+) allows simultaneous reading and writing operations in a single session.
+
+Binary Modes: Adding a b (e.g., wb, rb, ab) targets binary files instead of plain text files. These can also be combined with + for read/write binary access.
+
+Alternative Functions: Other useful C functions include fscanf() (taking formatted input from a text file), fputs() (writing an entire string), fputc() (writing a single character), and fgetc() (reading a single character).
+
+Conclusions
+Mastering file handling in C requires adhering to a strict operational sequence: opening a file pointer, checking for null references, executing the desired read/write operations using the correct mode, and securely closing the pointer. Developers should manually practice the various extended modes and I/O functions to confidently handle dynamic file manipulation and permanent data storage.
