@@ -1,0 +1,36 @@
+Dynamic Memory allcoation in C part 1
+Video link - https://youtu.be/fwahxyizXzg?si=pisXx9S-3hRglfi6
+
+Notes
+
+Core Premise
+Dynamic memory allocation in C enables the assignment of memory at runtime using standard library functions like malloc, which must subsequently be released using free to prevent memory leaks.
+
+Key Concepts
+
+Runtime Allocation: Memory is allocated during program execution rather than at compile time.
+
+Standard Library Requirement: Dynamic memory operations require the inclusion of the <stdlib.h> header file.
+
+malloc Function: Allocates a specified block of memory in bytes and returns a pointer to the beginning of the block.
+
+Pointer Arithmetic: Provides an efficient way to traverse and access elements in a dynamically allocated array using memory addresses.
+
+Memory Deallocation: Explicitly releasing memory using the free function is mandatory to maintain optimal system performance.
+
+Detailed Breakdown
+
+Initialization and Allocation
+To begin dynamic memory allocation, <stdlib.h> must be included. Memory is allocated using the malloc function by calculating the total bytes needed, typically expressed as the number of elements multiplied by the size of the data type (e.g., n * sizeof(int)). Although malloc returns a void pointer, it is considered standard best practice to typecast this return value to the appropriate pointer type, such as (int*).
+
+Implementation of Safety Checks
+Because memory allocation can occasionally fail due to system constraints, a safety check is critical. Immediately after calling malloc, the code must check if the returned pointer evaluates to NULL. If it does, the program cannot allocate memory and should safely exit (e.g., returning 1) to avoid segmentation faults.
+
+Input and Output via Pointer Arithmetic
+When populating the dynamically allocated array using scanf, pointer arithmetic simplifies the syntax. The expression arr + i dynamically evaluates to the memory address of the current element, removing the need for the traditional address-of operator (&). To print the stored values via printf, the dereference operator is applied to the address expression as *(arr + i) to retrieve the exact value in memory.
+
+Deallocation and Memory Leak Prevention
+Unlike variables declared at compile time, dynamically allocated memory is not automatically destroyed. The free() function must be passed the pointer variable at the end of its lifecycle to clear the memory. Skipping this step causes a memory leak, which retains useless data in memory, potentially generating garbage values and crashing larger, long-running programs.
+
+Conclusions
+For robust C programs, developers must use malloc for flexible runtime memory allocation, implement strict NULL pointer checks to prevent crashes, and invariably use the free() function to safely deallocate memory and eliminate the risk of memory leaks.
