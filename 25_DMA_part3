@@ -1,0 +1,45 @@
+Video link - https://youtu.be/8vaQZLnUnwk?si=0t3toNGF56-lJexO
+
+Notes
+
+Core Premise
+This video explains how to use the realloc function in C to dynamically resize previously allocated memory blocks while preserving existing data, alongside best practices for handling common memory-related errors.
+
+Key Concepts
+Dynamic memory expansion using the realloc function.
+
+Temporary pointers, typecasting, and allocation safety validation.
+
+Array index management for appending new data to expanded memory.
+
+Prevention of Segmentation Faults through NULL checks.
+
+Mitigation of Dangling Pointers and Memory Leaks via proper memory deallocation.
+
+Detailed Breakdown
+The realloc Function
+Purpose: realloc modifies the size of a memory block previously allocated by malloc or calloc. It finds a new space in memory, copies the old elements over, and allocates the required additional space.
+
+Arguments: The function requires two arguments: the pointer to the original memory block and the new total size required.
+
+Calculation: The total memory requested is calculated dynamically by adding the old number of elements to the new number of elements, multiplied by the byte size of the data type (e.g., (n + new_n) * sizeof(int)).
+
+Memory Safety and Pointer Management
+Temporary Pointers: A temporary pointer is initialized to accept the output of realloc. This prevents the original data from being lost if the reallocation fails.
+
+Validation Check: Immediately after calling realloc, the temporary pointer is checked to see if it points to NULL. If it does, an error is thrown, the original array is freed, and the program exits (returning 1).
+
+Pointer Reassignment: If the validation passes, the original array pointer is updated to point to the newly allocated memory block.
+
+Handling Array Indexes
+Appending Data: To input new elements without overwriting the existing ones, the input loop starts at the index equal to the old size (n) and iterates up to the new combined size (n + new_n).
+
+Printing Data: To display the complete dataset, the output loop runs from index 0 to n + new_n, seamlessly rendering the old and newly added elements together.
+
+Critical Memory Errors
+Segmentation Fault: This occurs when a program attempts to dereference a NULL pointer (accessing an address that does not exist). It is actively prevented by the NULL validation checks built into the code.
+
+Dangling Pointers and Memory Leaks: These happen when pointers reference deallocated memory or when allocated memory is never released back to the system. They are resolved by passing the pointer to the free() function at the end of its lifecycle and strictly setting that pointer to NULL immediately afterward.
+
+Conclusions
+To maintain robust dynamic memory allocation in C, developers must meticulously validate pointers after allocation, explicitly free() memory when it is no longer required, and immediately set those freed pointers to NULL. As a final call to action for mastering C, the instructor recommends utilizing AI platforms to generate practice projects and subsequently diving into Data Structures and Algorithms (DSA).
